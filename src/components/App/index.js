@@ -3,7 +3,7 @@ import TopBar from "../TopBar";
 import Header from "../backup/Header";
 import Introduction from "../backup/Introduction";
 import MenuSection from "../MenuSection";
-import "./App.css";
+// import "./App.css";
 
 class BackgrounImage extends Component {
   render () {
