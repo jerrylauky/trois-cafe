@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from "react";
+import React, { Component } from "react";
 
 const TARGET_TYPES = {
   BLANK: "_blank"
@@ -57,7 +57,7 @@ class TopBarNavItem extends Component {
   }
 }
 
-class TopBarNav extends Component {
+export class TopBarNav extends Component {
   constructor(props) {
     super(props);
     this.navItems = [
@@ -65,7 +65,8 @@ class TopBarNav extends Component {
       // { id: "top-bar-nav-events", href: "#events", text: "Events" },
       // { id: "top-bar-nav-career", href: "#career", text: "Career" },
       { id: "top-bar-nav-menu", href: "#menu", text: "Menu" },
-      { id: "top-bar-nav-contact", href: "#contact", text: "Contact" }
+      { id: "top-bar-nav-retail", href: "#retail", text: "Retail" },
+      // { id: "top-bar-nav-contact", href: "#contact", text: "Contact" }
     ];
   }
   render() {

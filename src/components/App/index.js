@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import TopBar from "../TopBar";
+import Header from "../backup/Header";
 import Introduction from "../backup/Introduction";
 import MenuSection from "../MenuSection";
 import "./App.css";
@@ -57,6 +58,7 @@ class App extends Component {
     return (
       <div id="site-container">
         <TopBar />
+        <Header />
         <BackgrounImage />
         <Introduction />
         <NarrowBackgroundImage />
