@@ -65,7 +65,8 @@ export class TopBarNav extends Component {
       // { id: "top-bar-nav-events", href: "#events", text: "Events" },
       // { id: "top-bar-nav-career", href: "#career", text: "Career" },
       { id: "top-bar-nav-menu", href: "#menu", text: "Menu" },
-      { id: "top-bar-nav-contact", href: "#contact", text: "Contact" }
+      { id: "top-bar-nav-retail", href: "#retail", text: "Retail" },
+      // { id: "top-bar-nav-contact", href: "#contact", text: "Contact" }
     ];
   }
   render() {

@@ -1092,6 +1092,7 @@ li {
 }
 
 #header {
+    display: none;
     z-index: 10000;
     width: 100%;
     margin: 0;
@@ -1644,6 +1645,7 @@ a.button, .button.blue, .button.red, .button.cherry, .button.orchid, .button.pin
   }
 
   #header {
+    display: block;
     padding: 10px 0;
   }
 
@@ -1829,7 +1831,6 @@ a.button, .button.blue, .button.red, .button.cherry, .button.orchid, .button.pin
     clear: both;
     min-height: 22px;
   }
-
 
   .top-links, .top-links.rgtflot {
     margin: 0;
