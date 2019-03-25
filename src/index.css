@@ -1941,6 +1941,10 @@ a.button, .button.blue, .button.red, .button.cherry, .button.orchid, .button.pin
     color: #c0c0c0;
   }
 
+  .top-links #nav > li.disabled > a {
+    color: #c0c0c0!important;
+  }
+
   .top-links #nav > li.active > a {
     color: #111;
   }
@@ -2027,6 +2031,10 @@ a.button, .button.blue, .button.red, .button.cherry, .button.orchid, .button.pin
     display: block;
   }
 
+  #header.sticky #nav-wrap #nav > li.disabled > a, #nav > li.disabled > a {
+    color: #c0c0c0;
+  }
+
   #header.sticky #nav-wrap #nav > li > a:hover, #nav > li > a:hover {
     color: #d0ae5e;
   }
@@ -2038,7 +2046,7 @@ a.button, .button.blue, .button.red, .button.cherry, .button.orchid, .button.pin
   }
 
   #header.sm-rgt-mn.active, #header.hi-header.sm-rgt-mn.active {
-    height: 230px;
+    height: 260px;
   }
 
   #header.sm-rgt-mn .logo-wrap {
@@ -2255,7 +2263,7 @@ a.button, .button.blue, .button.red, .button.cherry, .button.orchid, .button.pin
   }
 
   #header.sm-rgt-mn.active, #header.hi-header.sm-rgt-mn.active {
-    height: 230px;
+    height: 260px;
   }
 
   #header.sm-rgt-mn.active .logo-wrap {

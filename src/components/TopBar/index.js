@@ -124,7 +124,7 @@ export default class TopBar extends Component {
               <i className="sl-location-pin" />G/F, 6 Tit Hong Lane, Central, Hong Kong
             </h6>
             <h6>
-              <i className="sl-phone" />28336110
+              <i className="sl-phone" />+852 28336110
             </h6>
             <h6>
               <i className="sl-envelope-open" />enquiries@troiscafe.com{" "}
