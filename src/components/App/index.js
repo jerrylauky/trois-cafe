@@ -1,72 +1,78 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router";
+import { Switch, Route } from "react-router-dom";
+
 import TopBar from "../TopBar";
+import BackgroundImage from "../BackgroundImage";
+import NarrowBackgroundImage from "../NarrowBackgroundImage";
 import Header from "../backup/Header";
 import Introduction from "../backup/Introduction";
 import MenuSection from "../MenuSection";
-// import "./App.css";
+import ScrollTopButton from "../ScrollTopButton";
+import Footer from "../Footer";
 
-class BackgrounImage extends Component {
+import HomePage from "./pages/HomePage";
+import OrderPage from "./pages/OrderPage";
+import OpenHoursPage from "./pages/OpenHoursPage";
+import NotFoundPage from "./pages/NotFoundPage";
+import ComingSoonPage from "./pages/ComingSoonPage";
+
+class Main extends Component {
   render () {
+    // return (
+    //   <main>
+    //     <Switch>
+    //       <Route exact path="/" component={ HomePage } />
+    //       <Route path="/order" component={ OrderPage }/>
+    //       <Route path="/event" component={ EventPage }/>
+    //       <Route path="/online-store" component={ OnlineStorePage }/>
+
+    //       <Route path="/careers" component={ ComingSoonPage } />
+    //       <Route path="/customer-care" component={ ComingSoonPage } />
+    //       <Route path="/open-hours" component={ ComingSoonPage } />
+    //       <Route path="/about-us" component={ ComingSoonPage } />
+    //     </Switch>
+    //   </main>
+    // );
+
     return (
-      <div className="tp-bgimg">
-      </div>
+      <main>
+        <Switch>
+          <Route exact path="/" component={ HomePage } />
+          <Route path="/order" component={ OrderPage }/>
+          <Route path="/events" component={ ComingSoonPage }/>
+          <Route path="/online-store" component={ ComingSoonPage }/>
+
+          <Route path="/careers" component={ ComingSoonPage } />
+          <Route path="/customer-care" component={ ComingSoonPage } />
+          <Route path="/open-hours" component={ OpenHoursPage } />
+          <Route path="/about-us" component={ ComingSoonPage } />
+
+          <Route path="*" exact={ true } component={ NotFoundPage } />
+        </Switch>
+      </main>
     );
   }
 }
 
-class NarrowBackgroundImage extends Component {
-  render () {
-    const bgStyle = {
-      background: "url('http://lightcafe.ca/wp-content/uploads/2016/06/13441654_10154322244902578_1986947357_o.jpg')",
-      backgroundSize: "cover",
-      height: "450px",
-      backgroundPosition: "center center",
-      margin: "-40px 0px -20px 0px"
-    };
-    return (
-      <section className="wpb_row   full-row">
-        <div className="wpb_column vc_column_container vc_col-sm-12">
-          <div className="vc_column-inner">
-            <div className="wpb_wrapper">
-              <div className="wpb_raw_code wpb_content_element wpb_raw_html">
-                <div className="wpb_wrapper">
-                  <div style={ bgStyle }></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-}
-
-class ScrollTopButton extends Component {
-  render () {
-    return (
-      <span id="scroll-top" onClick={e => window.scrollTo(0, 0)}>
-        <a className="scrollup" style={{ display: "block" }}>
-          <i className="fa-chevron-up"></i>
-        </a>
-      </span>
-    );
-  }
-}
 
 class App extends Component {
+  getRouteName () {
+    const routeName = this.props.location.pathname.replace(/\W+(?!$)/g, "").toLowerCase();
+    return (routeName === "/" ? "home" : routeName) + "-page";
+  }
+
   render() {
     return (
-      <div id="site-container">
-        <TopBar />
+      <div id="site-container" className={ this.getRouteName() }>
+        <TopBar location={ this.props.location } />
         <Header />
-        <BackgrounImage />
-        <Introduction />
-        <NarrowBackgroundImage />
-        <MenuSection />
+        <Main />
         <ScrollTopButton />
+        <Footer />
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

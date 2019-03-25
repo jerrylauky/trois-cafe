@@ -247,7 +247,7 @@ export default class MenuSection extends Component {
                                 </div>
                               </div>
                             </div>
-                            <div className="wpb_wrapper">
+                            <div className="wpb_wrapper" style={{ display: "none" }}>
                               <p><a name="retail"></a></p>
                               <div className="max-title2">
                                 <h3>Retail</h3>
