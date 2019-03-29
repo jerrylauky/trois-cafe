@@ -16,6 +16,7 @@ import OrderPage from "./pages/OrderPage";
 import OpenHoursPage from "./pages/OpenHoursPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import ComingSoonPage from "./pages/ComingSoonPage";
+import CheckoutPage from "./pages/CheckoutPage";
 
 class Main extends Component {
   render () {
@@ -47,6 +48,8 @@ class Main extends Component {
           <Route path="/customer-care" component={ ComingSoonPage } />
           <Route path="/open-hours" component={ OpenHoursPage } />
           <Route path="/about-us" component={ ComingSoonPage } />
+
+          <Route path="/checkout" component={ CheckoutPage } />
 
           <Route path="*" exact={ true } component={ NotFoundPage } />
         </Switch>

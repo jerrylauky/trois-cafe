@@ -1,45 +1,83 @@
 import React, { Component } from "react";
 
+import Shelf from '../Shelf';
+import FloatCart from "../FloatCart";
+
+const centerHelveticaTextStyle = {
+  // "font-family: Helvetica; font-weight: 300; text-align: center;"
+  fontFamily: "Helvetica",
+  fontWeight: "300",
+  textAlign: "center"
+};
+// const shortCenterTextStyle = {
+//   // "line-height: 9px; font-family: Helvetica; font-weight: 300; text-align: center;"
+//   lineHeight: "9px",
+//   fontFamily: "Helvetica",
+//   fontWeight: "300",
+//   textAlign: "center"
+// };
+// const italicTextStyle = {
+//   // "font-size: 9px; font-style: italic;"
+//   fontSize: "9px",
+//   fontStyle: "italic"
+// };
+// const centerTextStyle = {
+//   textAlign: "center"
+// };
+// const rightTextStyle = {
+//   textAlign: "right"
+// };
+const coverFitStyle = {
+  objectFit: "cover"
+};
+// const square32 = {
+//   height: "32px",
+//   width: "32px"
+// };
+const galleryListStyle = {
+  flexDirection: "column",
+  paddingBottom: "0px",
+  paddingTop: "0px"
+};
+
+function MenuTitle () {
+  return (
+    <div className="max-title2">
+      <h3>Menu</h3>
+    </div>
+  );
+}
+
+function Description () {
+  return (
+    <p style={ centerHelveticaTextStyle }>
+      We are equipped with dining area that breathes cozy ambience, customarily designed to cater various types of events &amp; gatherings – from fun birthday bash to successful product launch and comfy business meeting.
+    </p>
+  );
+}
+
+function CateringInquiries () {
+  return (
+    <p style={ centerHelveticaTextStyle }>
+      For catering inquires, email us at&nbsp;<a href="mailto:info@troiscafe.hk">info@troiscafe.hk</a>
+    </p>
+  );
+}
+
+function DownloadMenuButton () {
+  return (
+    <a target="_blank" href="assets/pdfs/Menu.pdf" className="button theme-skin square large bordered-bot button-hover">
+      DOWNLOAD OUR MENU
+    </a>
+  );
+}
+
 export default class MenuSection extends Component {
   render () {
-    const centerHelveticaTextStyle = {
-      // "font-family: Helvetica; font-weight: 300; text-align: center;"
-      fontFamily: "Helvetica",
-      fontWeight: "300",
-      textAlign: "center"
-    };
-    // const shortCenterTextStyle = {
-    //   // "line-height: 9px; font-family: Helvetica; font-weight: 300; text-align: center;"
-    //   lineHeight: "9px",
-    //   fontFamily: "Helvetica",
-    //   fontWeight: "300",
-    //   textAlign: "center"
-    // };
-    // const italicTextStyle = {
-    //   // "font-size: 9px; font-style: italic;"
-    //   fontSize: "9px",
-    //   fontStyle: "italic"
-    // };
-    // const centerTextStyle = {
-    //   textAlign: "center"
-    // };
-    // const rightTextStyle = {
-    //   textAlign: "right"
-    // };
-    const coverFitStyle = {
-      objectFit: "cover"
-    };
-    // const square32 = {
-    //   height: "32px",
-    //   width: "32px"
-    // };
-    const galleryListStyle = {
-      flexDirection: "column",
-      paddingBottom: "0px",
-      paddingTop: "0px"
-    };
+    
     return (
       <section className="container">
+        <FloatCart />
         <div className="row-wrapper-x">
           <section className="wpb_row  gray">
             <div className="wpb_column vc_column_container vc_col-sm-12">
@@ -52,27 +90,24 @@ export default class MenuSection extends Component {
                           <div className="wpb_text_column wpb_content_element ">
                             <div className="wpb_wrapper">
                               <p><a name="menu"></a></p>
-                              <div className="max-title2">
-                                <h3>Menu</h3>
-                              </div>
-                              <p style={ centerHelveticaTextStyle }>
-                                We are equipped with dining area that breathes cozy ambience, customarily designed to cater various types of events &amp; gatherings – from fun birthday bash to successful product launch and comfy business meeting.
-                              </p>
+                              <MenuTitle />
+                              <Description />
                               <br />
-                              <p style={ centerHelveticaTextStyle }>
-                                For catering inquires, email us at&nbsp;<a href="mailto:info@troiscafe.hk">info@troiscafe.hk</a>
-                              </p>
+                              <CateringInquiries />
                             </div>
                             <div className="wpb_raw_code wpb_content_element wpb_raw_html">
                               <div className="wpb_wrapper">
                                 <center>
-                                  <a target="_blank" href="assets/pdfs/Menu.pdf" className="button theme-skin square large bordered-bot button-hover">
-                                    DOWNLOAD OUR MENU
-                                  </a>
+                                  <DownloadMenuButton />
                                 </center>
                               </div>
                             </div>
                             <div className="wpb_raw_code wpb_content_element wpb_raw_html">
+                              <div className="wpb_wrapper">
+                                <Shelf />
+                              </div>
+                            </div>
+                            <div className="wpb_raw_code wpb_content_element wpb_raw_html" style={{ display: "none" }}>
                               <div className="wpb_wrapper instagram">
                                 <div className=" _2z6nI">
                                   <article className="FyNDV">
