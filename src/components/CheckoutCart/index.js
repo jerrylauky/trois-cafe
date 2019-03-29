@@ -159,7 +159,7 @@ class CheckoutCart extends Component {
           html,
           replyTo: from
         };
-        axios.post("/contact", message)
+        axios.post("https://trois-cafe-api--jerrylauky.repl.co/contact", message)
         .then(function (response) {
           console.log(response);
           let productsToBeRemoved = JSON.parse(JSON.stringify(that.props.cartProducts));
