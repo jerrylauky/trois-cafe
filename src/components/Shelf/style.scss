@@ -102,6 +102,20 @@
       }
     }
 
+    &__quantity {
+      input {
+        width: 30%;
+        margin: 0 10px;
+        text-align: center;
+      }
+
+      input[type=number]::-webkit-inner-spin-button, 
+      input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+      }
+    }
+
     &__buy-btn {
       background-color: #1b1a20;
       color: #fff;

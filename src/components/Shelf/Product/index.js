@@ -92,9 +92,13 @@ class Product extends Component {
         <div 
           className="shelf-item__quantity"
         >
-          <span onClick={() => {this.setState({ quantity: Math.min(this.state.quantity + 1, 10) });}}>+</span>
+          <span onClick={() => {this.setState({ quantity: Math.max(this.state.quantity - 1, 0) }) }}>
+            <i className="fas fa-chevron-left"></i>
+          </span>
           <input type="number" value={ this.state.quantity } onChange={(e) => { this.setState({ quantity: (!e.target.value || isNaN(parseInt(e.target.value))) ? 0 : parseInt(e.target.value)}) }} />
-          <span onClick={() => {this.setState({ quantity: Math.max(this.state.quantity - 1, 0) }) }}>-</span>
+          <span onClick={() => {this.setState({ quantity: Math.min(this.state.quantity + 1, 10) });}}>
+            <i className="fas fa-chevron-right"></i>
+          </span>
         </div>
         {this.state.quantity > 0 &&
         <div 

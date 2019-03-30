@@ -1920,6 +1920,10 @@ a.button, .button.blue, .button.red, .button.cherry, .button.orchid, .button.pin
     width: calc(90vw);
   }
 
+  .checkout-page .container {
+    width: calc(80vw);
+  }
+
   .top-bar h6 i {
     color: #d0ae5e!important;
   }

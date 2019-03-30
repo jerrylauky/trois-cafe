@@ -46,12 +46,20 @@
 
     &--float-cart-closed {
       position: absolute;
-      background-color: #000;
+      /* background-color: #000; */
       background-size: 50%;
       left: -60px;
       width: 60px;
       height: 60px;
       cursor: pointer;
+
+      img {
+        filter: grayscale(100%);
+        margin: auto;
+        display: block;
+        position: relative;
+        margin-top: 15px;
+      }
 
       .bag__quantity {
         bottom: 5px;

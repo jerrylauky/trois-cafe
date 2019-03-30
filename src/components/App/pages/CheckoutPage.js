@@ -4,7 +4,35 @@ import CheckoutCart from "../../CheckoutCart";
 export default class CheckoutPage extends Component {
   render () {
     return (
-      <CheckoutCart />
+      <div>
+        <section className="container">
+          <div className="row-wrapper-x">
+            <section className="wpb_row  gray">
+              <div className="wpb_column vc_column_container vc_col-sm-12">
+                <div className="vc_column-inner">
+                  <div className="wpb_wrapper">
+                    <div className="vc_row wpb_row vc_inner vc_row-fluid">
+                      <div className="wpb_column vc_column_container vc_col-sm-12">
+                        <div className="vc_column-inner">
+                          <div className="wpb_wrapper">
+                            <div className="wpb_text_column wpb_content_element ">
+                              <div className="wpb_raw_code wpb_content_element wpb_raw_html">
+                                <div className="wpb_wrapper">
+                                  <CheckoutCart />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
     );
   }
 }

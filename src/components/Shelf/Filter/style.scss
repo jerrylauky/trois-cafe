@@ -42,13 +42,14 @@
 
       /* On mouse-over, add a grey background color */
       &:hover input ~ .checkmark {
-        border: 1px solid #1b1a20;
+        /* border: 1px solid #1b1a20; */
       }
 
       /* When the checkbox is checked, add a blue background */
       & input:checked ~ .checkmark {
-        background-color: #1b1a20;
-        color: #ececec;
+        /* background-color: #1b1a20; */
+        /* color: #ececec; */
+        border-bottom: 3px solid #1b1a20;
       }
 
       /* Show the checkmark when checked */
@@ -64,19 +65,22 @@
 
       /* Create a custom checkbox */
       .checkmark {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 35px;
+        /* position: absolute; */
+        /* top: 0; */
+        /* left: 0; */
+        /* width: 35px; */
         height: 35px;
         font-size: 0.8em;
-        border-radius: 50%;
+        /* border-radius: 50%; */
         line-height: 35px;
         text-align: center;
         color: #1b1a20;
-        background-color: #ececec;
+        /* background-color: #ececec; */
 
-        border: 1px solid transparent;
+        /* border: 1px solid transparent; */
+        width: 100%;
+        padding-bottom: 10px;
+        font-size: 14px;
       }
     }
   }
