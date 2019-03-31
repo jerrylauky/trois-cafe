@@ -137,11 +137,12 @@ class CheckoutCart extends Component {
         const { name, email, phone, address, notes } = formValues;
         const { cartProducts, cartTotal } = that.props;
         const from = name && email ? `${name} <${email}>` : `${name || email}`
+        const invoiceNumber = new Date().getTime();
 
-        let html = `
+        let htmlForCafe = `
         <div>
           <h3>Order Confirmation</h3>
-          <div><b>Invoice #</b>: ${ new Date().getTime() }</div>
+          <div><b>Invoice #</b>: ${ invoiceNumber }</div>
           <div><b>Name</b>: ${ name }</div>
           <div><b>Email</b>: ${ email }</div>
           <div><b>Phone</b>: ${ phone }</div>
@@ -149,18 +150,25 @@ class CheckoutCart extends Component {
           <div><b>Notes</b>: ${ notes }</div>
           <br />
           <h3>Order Summary</h3>`;
-        cartProducts.forEach(product => html += `<div><b>${product.title}</b> x ${product.quantity} = ${product.currencyFormat} ${util.formatPrice(product.price * product.quantity)}</div>`);
-        console.log(html);
-        html += `<div><b>Subtotal</b> = ${cartTotal.currencyFormat} ${util.formatPrice(cartTotal.totalPrice, cartTotal.currencyId)}</div>
+        cartProducts.forEach(product => htmlForCafe += `<div><b>${product.title}</b> x ${product.quantity} = ${product.currencyFormat} ${util.formatPrice(product.price * product.quantity)}</div>`);
+        console.log(htmlForCafe);
+        htmlForCafe += `<div><b>Subtotal</b> = ${cartTotal.currencyFormat} ${util.formatPrice(cartTotal.totalPrice, cartTotal.currencyId)}</div>
         </div>`;
-        const message = {
+        const messageForCafe = {
           from,
-          to: 'h38075@gmail.com',
+          to: 'info.troiscafe@gmail.com',
           subject: `New Order from ${from}`,
-          html,
+          html: htmlForCafe,
           replyTo: from
         };
-        axios.post("https://trois-cafe-api--jerrylauky.repl.co/contact", message)
+        let messageForCustomer = JSON.parse(JSON.stringify(messageForCafe));
+        let htmlForCustomer = htmlForCafe;
+        htmlForCustomer += `<div><br />Please contact Trois Cafe within 2 business days to complete the payment and we will start preparing your order.</div>`;
+        messageForCustomer.subject = `Trois Cafe - Order Confirmation (${ invoiceNumber })`;
+        messageForCustomer.html = htmlForCustomer;
+        messageForCustomer.to = email;
+        axios.post("https://trois-cafe-api--jerrylauky.repl.co/contact", messageForCafe)
+        .then(axios.post("https://trois-cafe-api--jerrylauky.repl.co/contact", messageForCustomer))
         .then(function (response) {
           console.log(response);
           let productsToBeRemoved = JSON.parse(JSON.stringify(that.props.cartProducts));
